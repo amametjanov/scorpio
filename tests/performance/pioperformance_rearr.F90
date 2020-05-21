@@ -742,7 +742,7 @@ contains
                    call PIO_InitDecomp(iosystem, PIO_INT, gdims, compmap, iodesc_i4, rearr=rearr)
 #endif
 #ifdef VARREAL
-                   call PIO_InitDecomp(iosystem, PIO_REAL, gdims, compmap, iodesc_r4, rearr=rearr)
+                   call PIO_InitDecomp(iosystem, PIO_DOUBLE, gdims, compmap, iodesc_r4, rearr=rearr)
 #endif
 #ifdef VARDOUBLE
                    call PIO_InitDecomp(iosystem, PIO_DOUBLE, gdims, compmap, iodesc_r8, rearr=rearr)
@@ -778,7 +778,7 @@ contains
 #endif
 #ifdef VARREAL
                       call PIO_setframe(File, varr(nv), recnum)
-                      call pio_write_darray(File, varr(nv), iodesc_r4, rfld(:,nv)    , ierr, fillval= PIO_FILL_FLOAT)
+                      call pio_write_darray(File, varr(nv), iodesc_r4, dfld(:,nv)    , ierr, fillval= PIO_FILL_DOUBLE)
 #endif
 #ifdef VARDOUBLE
                       call PIO_setframe(File, vard(nv), recnum)
